@@ -6,16 +6,13 @@
 //  Copyright (c) 2015 Ilya Kulebyakin. All rights reserved.
 //
 
-#ifndef __DMColloquium__Polynomial__
-#define __DMColloquium__Polynomial__
-
 #include "RationalNumber.h"
-
-#endif /* defined(__DMColloquium__Polynomial__) */
 
 class Polynomial {
 private:
     std::vector<RationalNumber> coefficients;
 public:
-    
+	Polynomial SUB_PP_P(Polynomial SecondPoly);
 };
+
+#endif /* defined(__DMColloquium__Polynomial__) */ 
