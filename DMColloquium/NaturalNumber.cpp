@@ -8,9 +8,24 @@
 
 #include "NaturalNumber.h"
 
-// put definitions for all methods over here.
+// Задача N-3, группа: Кожевников Никита, Ташланов Андрей
+NaturalNumber NaturalNumber::ADD_1N_N(){
+	for (unsigned int i = 0; i < digitBlocks.size(); i++)
+	{
+		if (digitBlocks[i] != 999999999)
+		{
+			digitBlocks[i] += 1;
+			break;
+		}
+		else
+			digitBlocks[i] = 0;
+	
+		if ((i+1) == digitBlocks.size())
+		{
+			digitBlocks.push_back(1);
+			break;
+		}
+	}
 
-/// This is just an example of how to get going. Doesn't make any sense
-NaturalNumber NaturalNumber::greatestCommonFactor(NaturalNumber secondNumber){
     return *this;
 }
