@@ -8,24 +8,31 @@
 
 #include "NaturalNumber.h"
 
+NaturalNumber::NaturalNumber() {
+	digitBlocks = std::vector<unsigned int>(1);
+	digitBlocks[0] = 0;
+}
+
 // Задача N-3, группа: Кожевников Никита, Ташланов Андрей
 NaturalNumber NaturalNumber::ADD_1N_N(){
-	for (unsigned int i = 0; i < digitBlocks.size(); i++)
+	NaturalNumber result = *this;
+
+	for (unsigned int i = 0; i < result.digitBlocks.size(); i++)
 	{
-		if (digitBlocks[i] != 999999999)
+		if (result.digitBlocks[i] != 999999999)
 		{
-			digitBlocks[i] += 1;
+			result.digitBlocks[i] += 1;
 			break;
 		}
 		else
-			digitBlocks[i] = 0;
+			result.digitBlocks[i] = 0;
 	
-		if ((i+1) == digitBlocks.size())
+		if ((i+1) == result.digitBlocks.size())
 		{
-			digitBlocks.push_back(1);
+			result.digitBlocks.push_back(1);
 			break;
 		}
 	}
 
-    return *this;
+    return result;
 }
